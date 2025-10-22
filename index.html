@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Minimal, professional portfolio template for showcasing projects and internship experience." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; /* deep slate */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7dd3fc; /* cyan */
+      --glass: rgba(255,255,255,0.03);
+      --radius:16px;
+      --max-width:1100px;
+      --gap:20px;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,var(--bg) 0%, #08101b 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:28px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none; color:inherit;
+    }
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#042029;box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+    .brand h1{font-size:16px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex;gap:12px;align-items:center}
+    .nav-link{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px}
+    .nav-link:hover{color:var(--accent);background:var(--glass)}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:start;margin-bottom:28px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);padding:22px;box-shadow:0 6px 20px rgba(2,6,23,0.6);
+    }
+
+    .intro h2{margin:0;font-size:28px}
+    .intro p{color:var(--muted);line-height:1.6}
+
+    .quick{
+      display:flex;flex-direction:column;gap:10px;margin-top:14px
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);text-decoration:none;color:inherit;font-weight:600;
+    }
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042029;border:none}
+
+    .meta{font-size:13px;color:var(--muted);margin-top:12px}
+
+    /* right column profile */
+    .profile{
+      display:flex;flex-direction:column;gap:16px;align-items:stretch
+    }
+    .avatar{
+      width:100%;height:240px;border-radius:12px;background:linear-gradient(180deg,#06202b,#072033);display:flex;align-items:center;justify-content:center;font-size:48px;color:var(--accent);font-weight:700
+    }
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    /* projects */
+    .section-title{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:18px 0}
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--gap)
+    }
+    .project{
+      padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;
+    }
+    .project:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .project h3{margin:0 0 6px 0;font-size:16px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+    .tech{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .chip{font-size:12px;padding:6px 8px;background:rgba(255,255,255,0.03);border-radius:8px;color:var(--muted)}
+
+    /* internship card */
+    .internship{display:flex;gap:12px;align-items:center}
+    .company{flex:1}
+    .timeline{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .profile{order:-1}
+    }
+
+    @media (max-width:420px){
+      .container{padding:0}
+      body{padding:20px}
+      .logo{width:40px;height:40px}
+      .avatar{height:180px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">RJ</div>
+        <div>
+          <h1>Your Name</h1>
+          <p>Mechatronics Graduate · Embedded Systems · Robotics</p>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#internship">Internship</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card intro">
+          <h2>Hello — I'm <span style="color:var(--accent)">Your Name</span></h2>
+          <p>I design and build embedded systems and robotics projects with an emphasis on practical, maintainable engineering. I enjoy working end-to-end: hardware, firmware, and the software layer that makes devices useful.</p>
+
+          <div class="quick">
+            <div class="meta">Based in Manila · Available for internships and entry-level roles</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact" id="downloadResume">Download CV</a>
+            </div>
+          </div>
+
+          <div class="meta" style="margin-top:14px">Tip: Click any project card to view a short summary and links.</div>
+        </div>
+
+        <aside class="profile card">
+          <div class="avatar">RJ</div>
+          <div>
+            <h3 style="margin:0">Quick facts</h3>
+            <div class="meta">Mechatronics graduate. Comfortable with C/C++, Python, Arduino, ESP32, sensors, and PID control.</div>
+          </div>
+
+          <div>
+            <h4 style="margin:10px 0 6px 0">Skills</h4>
+            <div class="skills">
+              <span class="skill">Arduino</span>
+              <span class="skill">ESP32</span>
+              <span class="skill">Python</span>
+              <span class="skill">C/C++</span>
+              <span class="skill">PCB design</span>
+              <span class="skill">Git</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects">
+        <div class="section-title">
+          <div>
+            <h2 style="margin:0">Projects</h2>
+            <div class="meta">Selected projects — embedded systems, robotics, and integrations.</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn" id="filterAll">All</button>
+            <button class="btn" id="filterEmbedded">Embedded</button>
+            <button class="btn" id="filterRobotics">Robotics</button>
+          </div>
+        </div>
+
+        <div class="grid" id="projectsGrid">
+
+          <!-- Example Project Card -->
+          <article class="project" data-tags="embedded" tabindex="0" role="button" aria-pressed="false">
+            <h3>Mono-axis Solar Tracker</h3>
+            <p>MPU6050 orientation lock, L298N motor control, and RTC-based positioning for sunrise/sunset tracking.</p>
+            <div class="tech">
+              <span class="chip">MPU6050</span>
+              <span class="chip">Arduino</span>
+              <span class="chip">PID</span>
+            </div>
+          </article>
+
+          <article class="project" data-tags="embedded" tabindex="0" role="button" aria-pressed="false">
+            <h3>ESP32 Fire Detection System</h3>
+            <p>Real-time sensor monitoring with MLX90614, MQ-2, flame sensors and SMS alerts via SIM800L.</p>
+            <div class="tech"><span class="chip">ESP32</span><span class="chip">SIM800L</span></div>
+          </article>
+
+          <article class="project" data-tags="robotics" tabindex="0" role="button" aria-pressed="false">
+            <h3>Sumo Robot (Multi-mode)</h3>
+            <p>ESP32-controlled sumo robot with multiple behavior modes and IR/ultrasonic sensing for ring detection.</p>
+            <div class="tech"><span class="chip">ESP32</span><span class="chip">TB6612</span></div>
+          </article>
+
+          <article class="project" data-tags="embedded" tabindex="0" role="button" aria-pressed="false">
+            <h3>PLin-API LIN Integration</h3>
+            <p>Python ctypes wrapper for PLinApi.dll enabling LIN bus communication for automotive tooling.</p>
+            <div class="tech"><span class="chip">Python</span><span class="chip">ctypes</span></div>
+          </article>
+
+          <article class="project" data-tags="robotics" tabindex="0" role="button" aria-pressed="false">
+            <h3>Pulverizer — OJT Project</h3>
+            <p>Mechanical chassis and system integration — collaborated with a team and handled electronic control subsystems.</p>
+            <div class="tech"><span class="chip">Mechanical</span><span class="chip">Controls</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="internship" style="margin-top:26px">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h2 style="margin:0">Internship / OJT</h2>
+              <div class="meta">Company Name — Role Title</div>
+            </div>
+            <div class="timeline">June 2024 — Aug 2024</div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:12px;align-items:flex-start">
+            <div style="flex:1">
+              <p style="margin:0;color:var(--muted)">During my internship I contributed to mechanical assembly, sensor calibration, firmware development for motor control, and documentation. I collaborated with cross-functional teams and supported testing and troubleshooting for a Pulverizer prototype.</p>
+
+              <ul style="margin-top:12px;color:var(--muted);line-height:1.6">
+                <li>Implemented motor control with L298N and provided PID tuning.</li>
+                <li>Integrated MPU6050 for orientation feedback and improved tracking accuracy.</li>
+                <li>Wrote test procedures and performed integration testing.</li>
+              </ul>
+            </div>
+            <div style="width:200px;text-align:right">
+              <a class="btn" href="#contact">Get reference</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:26px">
+        <div class="card">
+          <h2 style="margin-top:0">About</h2>
+          <p class="meta">Short bio: you can paste your education and a short paragraph about your professional goals, the technologies you prefer, and the types of roles you are looking for.</p>
+
+          <div style="display:flex;gap:18px;margin-top:12px;flex-wrap:wrap">
+            <div style="min-width:200px">
+              <strong>Education</strong>
+              <div class="meta">B.S. Mechatronics Engineering — University Name</div>
+            </div>
+
+            <div style="min-width:200px">
+              <strong>Tools</strong>
+              <div class="meta">Arduino, ESP32, Python, Git, Fritzing / KiCad</div>
+            </div>
+
+            <div style="min-width:200px">
+              <strong>Contact</strong>
+              <div class="meta">Email: <a href="mailto:you@example.com">you@example.com</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:26px">
+        <div class="card">
+          <h2 style="margin-top:0">Contact</h2>
+          <p class="meta">Prefer email? Use the quick contact form below — it will open your email client pre-filled. Or link to LinkedIn / GitHub.</p>
+
+          <form id="contactForm" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+            <input name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit" />
+            <input name="email" type="email" placeholder="Your email" required style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit" />
+            <input name="subject" placeholder="Subject" style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit" />
+            <textarea name="message" placeholder="Message" rows="4" style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit;grid-column:1/3"></textarea>
+
+            <div style="display:flex;gap:8px;justify-content:flex-end;grid-column:1/3">
+              <button class="btn" type="reset">Reset</button>
+              <button class="btn primary" id="sendBtn">Send</button>
+            </div>
+          </form>
+
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Your Name — <a href="#" style="color:var(--muted);text-decoration:underline">GitHub</a> · <a href="#" style="color:var(--muted);text-decoration:underline">LinkedIn</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // --- Small JS for interactions ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Project card click to show details (simple modal using alert for minimalism)
+    document.querySelectorAll('.project').forEach(p => {
+      p.addEventListener('click', ()=>{
+        const title = p.querySelector('h3').textContent;
+        const desc = p.querySelector('p').textContent;
+        const chips = Array.from(p.querySelectorAll('.chip')).map(c=>c.textContent).join(', ');
+        const msg = `${title}\n\n${desc}\n\nTechnologies: ${chips}`;
+        // Replace with a nicer modal if you prefer. This keeps the template dependency-free.
+        alert(msg);
+      });
+
+      p.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') p.click(); });
+    });
+
+    // Simple filter buttons
+    const grid = document.getElementById('projectsGrid');
+    const showAll = () => Array.from(grid.children).forEach(c=>c.style.display='block');
+    document.getElementById('filterAll').addEventListener('click', ()=> showAll());
+    document.getElementById('filterEmbedded').addEventListener('click', ()=> {
+      Array.from(grid.children).forEach(c=> c.dataset.tags.includes('embedded') ? c.style.display='block' : c.style.display='none');
+    });
+    document.getElementById('filterRobotics').addEventListener('click', ()=> {
+      Array.from(grid.children).forEach(c=> c.dataset.tags.includes('robotics') ? c.style.display='block' : c.style.display='none');
+    });
+
+    // Contact form: open mail client with prefilled content
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = data.get('name');
+      const email = data.get('email');
+      const subject = data.get('subject') || 'Contact from portfolio';
+      const message = data.get('message') || '';
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:you@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    });
+
+    // Download CV button behavior — replace URL with your resume link
+    document.getElementById('downloadResume').addEventListener('click', (e)=>{
+      e.preventDefault();
+      // If you have a resume URL, set it here. For now opens mailto to request CV.
+      window.location.href = 'mailto:you@example.com?subject=Request%20for%20CV';
+    });
+  </script>
+</body>
+</html>
